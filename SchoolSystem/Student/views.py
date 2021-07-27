@@ -1,3 +1,12 @@
-from django.shortcuts import render
+from django .shortcuts import render
+from .forms import StudentRegistritionForm
+from django .shortcuts import render
 
-# Create your views here.
+def register_student(request):
+    form = StudentRegistritionForm()
+    return render(request, "register_student.html",{
+        "form":form
+    })
+
+
+

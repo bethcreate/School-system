@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trainer List</title>
+</head>
+
+<body>
+
+    <style>
+        table {
+            width: 800px;
+            margin: auto;
+            text-align: center;
+            table-layout: auto;
+        }
+
+        tr {
+            color: purple;
+        }
+
+        table,
+        tr,
+        th,
+        td {
+            padding: 20px;
+            color: white;
+            border: 1px solid rgb(6, 61, 99);
+            border-collapse: collapse;
+            font-size: 15px;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            background: linear-gradient(top, rgb(130, 238, 229) 0%, rgb(145, 241, 212) 100%);
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        td:hover {
+            background: rgb(148, 206, 253);
+        }
+
+        th {
+            background-color: purple;
+        }
+
+        td {
+            color: black;
+        }
+
+        h1 {
+            text-align: center;
+            color: rgb(82, 226, 226);
+            padding-top: 10%;
+        }
+
+        img {
+            height: 50px;
+            width: 50px;
+        }
+    </style>
+    <table>
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>course</th>
+            <th>gender</th>
+            <th>number of lessons taught</th>
+            <th>profile</th>
+            <th>age</th>
+            <th>occupation</th>
+            <th>phone number</th>
+            <th>bio</th>
+            <th>CV</th>
+            <th>email</th>
+            <th>contract</th>
+            <th>date hired </th>
+            <th>languages</th>
+        <tr>
+        <tr>
+            {% for trainer in trainers %}
+            <td>{{trainer.first_name}}</td>
+            <td>{{trainer.last_name}}</td>
+            <td>{{trainer.course}}</td>
+            <td>{{trainer.gender}}</td>
+            <td>{{trainer.number_of_lessons_taught}}</td>
+            <td><img src="{{trainer.profile.url}}"></td>
+            <td>{{trainer.age}}</td>
+            <td>{{trainer.occupation}}</td>
+            <td>{{trainer.phone_number}}</td>
+            <td>{{trainer.bio}}</td>
+            <td>{{trainer.cv}}</td>
+            <td>{{trainer.email}}</td>
+            <td>{{trainer.contract}}</td>
+            <td>{{trainer.date_hired}}</td>
+            <td>{{trainer.language}}</td>
+
+
+        </tr>
+        {%endfor%}
+    </table>
+
+
+</body>
+
+</html>

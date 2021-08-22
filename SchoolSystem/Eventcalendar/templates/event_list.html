@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event list</title>
+</head>
+<body>
+
+    <style>
+        tr{
+            padding-right: 20px;
+            color: red;
+        }
+        td{
+            color: black;
+
+
+        }
+
+table{
+    width: 800px;
+    margin: auto;
+    text-align: center;
+    table-layout:auto;
+}
+table,th,td{
+    padding: 20px;
+    color: white;
+    border: 1px solid rgb(6, 61, 99);
+    border-collapse: collapse;
+    font-size: 15px;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background: linear-gradient(top,rgb(130, 238, 229) 0%,rgb(145, 241, 212) 100%);
+    text-align: center;
+    margin-top: 40px;
+}
+td:hover{
+    background: rgb(148, 206, 253) ;
+}
+
+th{
+    background-color: purple;
+}
+td{
+    color: black;
+}
+h1{
+    text-align: center;
+    color: rgb(82, 226, 226);
+    padding-top: 10%;
+}
+        
+    </style>
+    <table>
+        <tr>
+            <th>event_name</th>
+            <th>event_date</th>
+            <th>event_time</th>
+            <th>event_planner</th>
+            <th>event_participants</th>
+            <th>event_duration</th>
+            <th>event_approved_by</th>
+            <th>event_id</th>
+          <tr>
+            {% for event in events %}
+            <td>{{event.event_name}}</td>
+            <td>{{event.event_date}}</td>
+            <td>{{event.event_time}}</td>
+            <td>{{event.event_planner}}</td>
+            <td>{{event.event_participants}}</td>
+            <td>{{event.event_duration}}</td>
+            <td>{{event.event_approved_by}}</td>
+            <td>{{event.event_id}}</td>
+            
+    
+        </tr>
+        {%endfor%}
+    </table>
+</body>
+</html>

@@ -3,71 +3,89 @@ from django.db import models
 # Create your models here.
 class Student(models.Model):
     first_name = models.CharField(
-        max_length=12
+        max_length=12, null=True
     )
 
     last_name = models.CharField(
-        max_length=15
+        
+        max_length=15, null=True
     )
 
     age = models.PositiveSmallIntegerField(
     )
 
     date_of_birth = models.DateField(
-        max_length=27
+        max_length=27, null=True
     )
 
     roll_number=models.CharField(
-        max_length=10
+        max_length=10, null=True
     )
 
-    emailAdress=models.EmailField(
-        max_length=50
+    email_adress=models.EmailField(
+        max_length=50,null=True
     )
+    
     nationality=models.CharField(
-        max_length=150
+        max_length=150,null=True
     )
+    
     student_id=models.PositiveSmallIntegerField(
+        null=True
        
     )
+    
     id_number=models.CharField(
-        max_length=10
+        max_length=10, null=True
         
     )
     GENDER_CHOICES=(
         (u'M', u'Male'),
         (u'F', u'Female'),
-        (u'O', u'Other'),
+        (u'O', u'Others'),
     )
     gender=models.CharField(
-        max_length=1, choices=GENDER_CHOICES
+        max_length=1, choices=GENDER_CHOICES, null=True
         )
 
-    phoneNumber=models.CharField(
-        max_length=15
+    
+    phone_number=models.CharField(
+        max_length=15, null=True
     )
-    # image=models.ImageField(
-    #     upload_to='uploads',blank=True
-    # )
+    image=models.ImageField(
+        upload_to='images',blank=True
+    )
+    
     medical_report=models.FileField(
+        null=True,
+        upload_to='documents/'
 
     )
+    
     date_of_enrollment=models.DateField(
-        max_length=10
+        max_length=10,null=True
     )
+    
     course_name=models.CharField(
-        max_length=15
+        max_length=100, null=True
     )
 
+    
     LANGUAGE_CHOICES=(
         (u'E', u'English'),
          (u'S', u'Swahili'),
+         (U'K', u'Kikuyu'),
+         (U'R', u'kinyarwanda'),
+         (U'U', u'Kiganda')
+         
     )
-    language=models.CharField(
-        max_length=2, choices=LANGUAGE_CHOICES
+    
+    languages=models.CharField(
+        max_length=2, choices=LANGUAGE_CHOICES, null=True
         )
-    serial_number=models.CharField(
-        max_length=20
+    
+    laptop_serial_number=models.CharField(
+        max_length=20, blank=True,null=True
     )
 
    

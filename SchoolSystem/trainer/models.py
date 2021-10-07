@@ -76,4 +76,6 @@ class Trainer(models.Model):
     language=models.CharField(
         max_length=2, choices=LANGUAGE_CHOICES
         )
+    def full_name(self):
+                return f"{self.first_name} {self.last_name}"
 

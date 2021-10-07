@@ -3,6 +3,9 @@ from django.db import models
 # Create your models here.
 
 class Course(models.Model):
+    profile=models.ImageField(
+        upload_to='images',blank=True
+    )
     course_name=models.CharField(
         max_length=50, null=True
     )

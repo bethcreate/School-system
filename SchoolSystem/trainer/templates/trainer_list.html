@@ -62,12 +62,15 @@
     </style>
     <table>
         <tr>
+            <th>profile</th>
+            <th>profile</th>
+            <th>Edit</th>
             <th>First Name</th>
             <th>Last Name</th>
             <th>course</th>
             <th>gender</th>
             <th>number of lessons taught</th>
-            <th>profile</th>
+            
             <th>age</th>
             <th>occupation</th>
             <th>phone number</th>
@@ -80,12 +83,16 @@
         <tr>
         <tr>
             {% for trainer in trainers %}
+            <td><img src="{{trainer.profile.url}}"></td>
+            <td><a href="{% url 'trainer_profile' id=trainer.id%}">profile</a></td>
+            <td><a href="{% url 'edit_trainer' id=trainer.id%}">Edit</a></td>
+
             <td>{{trainer.first_name}}</td>
             <td>{{trainer.last_name}}</td>
             <td>{{trainer.course}}</td>
             <td>{{trainer.gender}}</td>
             <td>{{trainer.number_of_lessons_taught}}</td>
-            <td><img src="{{trainer.profile.url}}"></td>
+            
             <td>{{trainer.age}}</td>
             <td>{{trainer.occupation}}</td>
             <td>{{trainer.phone_number}}</td>

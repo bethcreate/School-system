@@ -43,6 +43,9 @@ h1{
     </style>
     <table>
         <tr>
+       
+            <th>Profile</th>
+            <th>Edit</th>
             <th>Course Name</th>
             <th>Course Code</th>
             <th>Syllabus</th>
@@ -53,6 +56,10 @@ h1{
 
             <tr>
             {% for course in courses %}
+           
+            <td><a href="{% url 'course_profile' id=course.id%}">profile</a></td>
+            <td><a href="{% url 'edit_course' id=course.id%}">Edit</a></td>
+            
             <td>{{course.course_name}}</td>
             <td>{{course.course_code}}</td>
             <td>{{course.syllabus}}</td>

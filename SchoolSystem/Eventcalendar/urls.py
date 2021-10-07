@@ -7,4 +7,5 @@ app_name="Eventcalendar"
 urlpatterns=[
     path("beth/",register_event, name ="register_event"),
       path("list/", event_list, name="event_list"),
+
 ]

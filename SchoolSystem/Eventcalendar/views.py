@@ -5,6 +5,12 @@ from django.forms.forms import Form
 from .forms import EventRegistrationForm
 from .models import Event
 
+from datetime import datetime
+
+from django.http import HttpResponse
+from django.views import generic
+from django.utils.safestring import mark_safe
+
 
 
 def register_event(request):
@@ -22,3 +28,5 @@ def register_event(request):
 def event_list(request):
     events= Event.objects.all()
     return render(request, "event_list.html", {"events":events})
+
+

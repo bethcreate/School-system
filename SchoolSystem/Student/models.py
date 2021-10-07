@@ -1,7 +1,12 @@
 from django.db import models
+import datetime
 
-# Create your models here.
 class Student(models.Model):
+
+
+    image=models.ImageField(
+        upload_to='images',blank=True
+    )
     first_name = models.CharField(
         max_length=12, null=True
     )
@@ -52,9 +57,7 @@ class Student(models.Model):
     phone_number=models.CharField(
         max_length=15, null=True
     )
-    image=models.ImageField(
-        upload_to='images',blank=True
-    )
+   
     
     medical_report=models.FileField(
         null=True,
@@ -86,8 +89,16 @@ class Student(models.Model):
     
     laptop_serial_number=models.CharField(
         max_length=20, blank=True,null=True
-    )
 
+    )
+    def full_name(self):
+                return f"{self.first_name} {self.last_name}"
+
+    def year_of_birth(self):
+        current_year=datetime.datetime.now().year
+        year= current_year
+        return year-self.age
+        
    
 
 

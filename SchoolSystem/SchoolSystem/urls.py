@@ -20,12 +20,16 @@ from django.conf.urls.static import static
 from django.conf import settings
 
 urlpatterns = [
+   
+    path("",include("landing.urls")),
     path('admin/', admin.site.urls),
-    path("", include("landing.urls")),
     path("student/", include("Student.urls")),
     path("trainer/", include("trainer.urls")),
     path("course/", include("course.urls")),
     path("Eventcalandar/", include("Eventcalendar.urls")),
+    path('', include('cal.urls')),
+    path('api/', include('api.urls')),
+    
 
     
 ]
